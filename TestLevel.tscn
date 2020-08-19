@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Ship1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Space.png" type="Texture" id=2]
+[ext_resource path="res://TestWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://EnemyTest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://LeftAnalogue.tscn" type="PackedScene" id=5]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 1 )]
+gravity_scale = 0.0
+linear_damp = 2.0
+torrentColor1 = Color( 1, 0.529412, 0, 1 )
+torrentColor2 = Color( 0.121569, 0.74902, 1, 1 )
+torrentColor3 = Color( 0.568627, 0.270588, 1, 1 )
+
+[node name="LeftAnalogue" parent="RigidBody2D" instance=ExtResource( 5 )]
+position = Vector2( -1706.46, 832.758 )
+z_index = 1000
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -11.1427, 0 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2188.59, -209.645 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1522.17, -139.251 )
+
+[node name="EnemyTest" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.121569, 0.74902, 1, 1 )
+position = Vector2( -484.438, -1120.04 )
+
+[node name="EnemyTest2" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.568627, 0.270588, 1, 1 )
+position = Vector2( 32.8054, -1017.42 )
+
+[node name="EnemyTest3" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 0.529412, 0, 1 )
+position = Vector2( 523.759, -1056.47 )
+
+[node name="EnemyTest4" parent="." instance=ExtResource( 4 )]
+modulate = Color( 1, 0.529412, 0, 1 )
+position = Vector2( -751.046, -869.574 )

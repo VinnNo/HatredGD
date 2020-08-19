@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/texAnalogueThumb.png" type="Texture" id=1]
+[ext_resource path="res://Assets/texAnalogueBG.png" type="Texture" id=2]
+[ext_resource path="res://LeftTouchScreenButton.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 40.0
+
+[node name="LeftAnalogue" type="Sprite"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="LeftTouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( -44.7978, -44.7978 )
+normal = ExtResource( 1 )
+shape = SubResource( 1 )
+script = ExtResource( 3 )
